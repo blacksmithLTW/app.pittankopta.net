@@ -118,9 +118,9 @@ gulp.task('js', function() {
 		.pipe(gulp.dest('dist/'));
 });
 
-// Copy images
+// Copy images and HTML
 gulp.task('image', function() {
-	return gulp.src('src/**/*.{png,jpg,gif}')
+	return gulp.src('src/**/*.{png,jpg,gif,html}')
 		.pipe(gulp.dest('dist/'));
 });
 
