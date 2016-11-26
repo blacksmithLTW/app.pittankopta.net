@@ -1,0 +1,29 @@
+include ./shared/_html-header
+
+html
+	+html-header('11月になりました！')
+	body
+		.content-area
+			+content-header('11月になりました！', '2016/11/01', '')
+			.article
+				| おはようございます！
+				br
+				| 11月になりましたね。
+				br
+				br
+				| メンバーのグリーティングカードを
+				br
+				| 11月のものに更新しました。
+				br
+				br
+				| 画像が変わらない場合は
+				br
+				| メンバーリストを更新するか
+				br
+				| アプリの再起動をお試しください。
+				br
+				| これからもkeyaki2を
+				br
+				| よろしくお願いします。
+				br
+			+content-footer

@@ -1,0 +1,17 @@
+include ./shared/_html-header
+
+html
+	+html-header('お知らせ')
+	body
+		.content-area
+			.icon-container.flex-center
+				.icon
+			.title.flex-center お知らせ
+			.detail.flex-center 作者の小言もあるかも
+			.article-list
+
+				a.article-link(href="./release20161101_greeting.html")
+					span.article-title 11月になりました！
+					span.article-date 2016/11/01 
+
+			+content-footer
