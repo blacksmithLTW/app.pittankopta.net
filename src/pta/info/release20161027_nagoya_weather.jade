@@ -1,0 +1,37 @@
+include ./shared/_html-header
+
+html
+	+html-header('名古屋のお天気情報')
+	body
+		.content-area
+			.icon-container.flex-center
+				.icon
+			.title.flex-center 名古屋公演のお天気情報
+			.detail.flex-center 2016/10/27 ぴた﨑
+			.article
+				| こんはんは！
+				br
+				| 来週の今頃は名古屋公演初日終了ですね。
+				br
+				br
+				| この週末遠征の準備をする方も
+				br
+				| 多いのではないでしょうか。
+				br
+				br
+				| というわけで名古屋のお天気です。
+				br
+				a(href='http://weather.yahoo.co.jp/weather/leisure/baseball/23/31002.html') こちら
+				| によると、
+				br
+				| 木曜日のお天気は
+				b 曇り時々晴
+				| です。
+				br
+				br
+				| 最高気温が18℃なので
+				br
+				| 寒さには気をつけてください👼
+				br
+				br
+			+content-footer

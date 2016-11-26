@@ -1,0 +1,47 @@
+include ./shared/_html-header
+
+html
+	+html-header('福岡のお天気情報')
+	body
+		.content-area
+			.icon-container.flex-center
+				.icon
+			.title.flex-center 福岡のお天気情報
+			.detail.flex-center 2016/11/10 ぴた﨑
+			.article
+				| おはようございます！
+				br
+				| いよいよ福岡公演、千秋楽が明後日に
+				br
+				| なりました！楽しみですね！
+				br
+				br
+				| ここでPerfumeHubから週末の福岡の
+				br
+				| お天気情報をお届けします。
+				br
+				br
+				| 土曜日は
+				b 晴れ時々曇
+				| 、日曜日は
+				b 曇時々晴れ
+				br
+				| だそうです。
+				br
+				br
+				| ソースは
+				a(href='http://weather.yahoo.co.jp/weather/leisure/baseball/40/31008.html') こちら
+				br
+				br
+				| だんだん寒くなってきたので
+				br
+				| あたたかくして気をつけてください。
+				br
+				br
+				| 明日にはヒートテックで何か
+				br
+				| 動きもありそうですね。
+				br
+				br
+				| ではでは。
+			+content-footer
