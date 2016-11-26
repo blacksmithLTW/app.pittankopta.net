@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,user-scalable=no">
+
+      <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+      <title>PROGRESS</title>
+    </head>
+
+    <body>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="container">
+
+            <img class="img-responsive center-block" src="./Icon-60@2x.png" style="padding-top:10px;">
+            <h2 class="text-center">ブログ進捗状況</h2>
+            <p class="text-center" id="progress"></p>
+            <p class="text-center" id="estimated"></p>
+            <p class="text-center">書込済:<small id="progressArticle"></small></p>
+            <hr/>
+            <p>全体の進捗状況</p>
+            <div class="progress progress-striped active">
+              <div class="progress-bar" id="barAll" style="width: 45%"></div>
+            </div>
+            <hr/>
+            <p>メンバーの進捗状況</p>
+            <div class="progress progress-striped active">
+              <div class="progress-bar" id="barMember" style="width: 45%"></div>
+            </div>
+            <hr/>
+            <p>月ごとの進捗状況</p>
+            <div class="progress progress-striped active">
+              <div class="progress-bar" id="barMonth" style="width: 45%"></div>
+            </div>
+            <hr/>
+            <p class="text-center">- nogi2 -</p>
+
+          </div>
+        </div>
+
+        <script>
+        $(function() {
+        	update();
+        	check = setInterval("update()",1000);
+          console.error("aaaa");
+        });
+        function update(){
+            $.ajax({
+                url: 'http://api.pittankopta.net/nogi2/v3/progress.php',
+                type: 'GET',
+                dataType: 'json',
+                cache : false,
+                success: function(res){
+                  console.log("log");
+              	  changeProgress(res.message,res.article);
+                  changeProgressBar(res.progressAll,res.progressMember,res.progressMonth,res.all,res.estimatedTime);
+                  changeET(res.estimatedTime);
+                },
+                error : function(){
+                  console.log("err");
+                }
+              });
+
+        }
+
+        function changeProgress(message,article){
+          $("#progress").text(message);
+          $("#progressArticle").text(article);
+        }
+        function changeET(estimated){
+          time = estimated / 60 /60;　
+          time = floatFormat(time, 2);
+          $("#estimated").text("残り"+time+"時間");
+        }
+
+        function floatFormat( number, n ) {
+        	var _pow = Math.pow( 10 , n ) ;
+
+        	return Math.round( number * _pow ) / _pow ;
+        }
+
+        function changeProgressBar(progress,progress2,progress3,all,time){
+          var progresst = floatFormat((all-time) / all *100,1);
+
+          $("#barAll").css('width', (progresst)+ '%');
+		      $("#barAll").text((progresst)+ '%');
+
+          $("#barMember").css('width', (progress2)+ '%');
+		      $("#barMember").text((progress2)+ '%');
+          $("#barMonth").css('width', (progress3)+ '%');
+		      $("#barMonth").text((progress3)+ '%');
+        }
+        </script>
+    </body>
+</html>

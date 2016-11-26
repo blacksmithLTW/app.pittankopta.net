@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,user-scalable=no">
+
+      <!-- Bootstrap core CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+      <title>避難所検索について</title>
+    </head>
+
+    <body>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="container">
+
+            <img class="img-responsive center-block" src="./Icon-60@2x.png" style="padding-top:40px;">
+            <h2 class="text-center">避難所検索 v0.2.0</h2>
+            <p class="text-center">現在地付近の避難所データを検索することができます。</p>
+            <div class="howtouse" style="padding:10px 0px;">
+              <h3>使い方</h3>
+              <p>
+                  位置情報の提供を許可した後、自動的に現在地付近の避難所が検索されます。<br/>
+                  検索できた避難所のピンをタップして位置を確認してください。<br/><br/>
+                  緑色のピンは避難所、赤色のピンはAEDです。<br/>
+                  地図を動かすとAEDのみ再検索を行います。<br/>
+                  赤い円の中の範囲でAEDを検索します。<br/>
+                  避難所は現在地周辺のみ表示します（API叩き過ぎないようにするため）<br/>
+
+              </p>
+              <img class="img-responsive center-block" src="./img/Emergency.jpg" style="padding:10px 0px;">
+              <img class="img-responsive center-block" src="./img/Emergency-2.jpg" style="padding:10px 0px;">
+              <hr/>
+
+              <h3>データ提供</h3>
+              <p>
+                  <strong>避難所データ：</strong><br/>
+                  株式会社jig.jpのオープンデータプラットフォームで提供されている地域に準じます。<br/>
+                  提供されている地域は<a href="http://ckan.odp.jig.jp/dataset">こちら</a>から検索できます。<br/><br/>
+
+                  <strong>AEDデータ：</strong><br/>
+                  AEDオープンデータプラットフォームのデータを使用しています。
+              </p>
+
+
+              <hr/>
+            </div>
+    </body>
+</html>

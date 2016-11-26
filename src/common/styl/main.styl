@@ -1,0 +1,249 @@
+flex-version ?= flex
+
+@import 'nib'
+
+body {
+	-webkit-touch-callout none
+	-webkit-user-select none
+	color #616161
+}
+
+.bg-keyaki2 {
+	background-color : #62B85A;
+}
+
+.bg-perfumehub {
+	background-color: #489BC6;
+}
+
+a:link {
+	color #489BC6
+	text-decoration none
+}
+a:visited {
+	color #489BC6
+	text-decoration none
+}
+a:hover {
+	color #489BC6
+	text-decoration none
+}
+a:active {
+	color #489BC6
+	text-decoration none
+ }
+
+body {
+	margin 0
+	font-family 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro', Meiryo;
+	background-color #f5f5f5
+}
+
+// よく使うのでflex-centerとして定義
+.flex-center {
+	display flex
+	align-items center
+	justify-content center
+}
+
+.link-btn
+	margin 30px 10px
+	border 1px solid #616161
+	border-radius 5px
+	height 40px
+
+.header
+	position fixed
+	height 48px
+	width 100%
+	top 0
+	z-index 100000
+	color #616161
+	background-color white
+	border-bottom 2px solid #489BC6
+
+	.header-title
+		width 40%
+		position absolute
+		top 0
+		z-index 1
+		left 5%
+		height 100%
+		line-height 20px
+		font-size 20px
+		display flex
+		align-items center
+		letter-spacing -1px
+
+.content-area
+	padding-top 50px
+	padding-left 10%
+	padding-right 10%
+
+	h2
+		font-size 18px
+		font-weight 100
+		color #616161
+		margin 10px 0 5px 0
+
+.content-title
+	font-weight 700
+	margin 10px 10px 0 10px
+	font-size 20px
+	/*border-bottom: 2px solid #489BC6; */
+	background-color #489BC6
+	border-radius 5px
+	color white
+	height 40px
+
+.description
+	font-size 12px
+	line-height 15px
+	text-align center
+	padding 4px 0 10px 0
+
+.app-list
+	display flex
+	justify-content center
+	flex-wrap wrap
+	position relative
+
+	.app
+		height 126px
+		flex none
+		min-width 100px
+		margin-bottom 10px
+		display flex
+		flex-direction column
+		align-items center
+
+		.name
+			margin-top 3px
+			font-size 12px
+			line-height 14px
+			height 14px
+
+		.platform-container
+			margin-top 3px
+			font-size 10px
+			line-height 15px
+			height 15px
+
+			.platform
+				background-color #888888
+				color white
+				padding 2px 5px
+				border-radius 6px
+				margin-right 2px
+
+.icon-container
+	margin-top 20px
+	width 100%
+
+.icon
+	height 80px
+	width 80px
+	background-color #666666
+	border-radius 20px
+
+	&:hover
+		opacity 0.8
+
+	&.perfume-hub
+		background url('../img/perfumehub.png')
+		background-repeat no-repeat
+		background-size contain
+
+	&.keyaki2
+		background url('../img/keyaki2.png')
+		background-repeat no-repeat
+		background-size contain
+
+	&.spam-checker
+		background url('../img/spamchecker.png')
+		background-repeat no-repeat
+		background-size contain
+
+	&.sparql-parkl
+		background url('../img/parql.png')
+		background-repeat no-repeat
+		background-size contain
+
+	&.vendor-dk3
+		background url('../img/dk3.png')
+		background-repeat no-repeat
+		background-size contain
+
+	&.enamo
+		background url('../img/enamo.png')
+		background-repeat no-repeat
+		background-size contain
+
+	&.nogi2
+		background url('../img/nogi2.png')
+		background-repeat no-repeat
+		background-size contain
+
+	&.ticklir2
+		background url('../img/ticklir2.png')
+		background-repeat no-repeat
+		background-size contain
+		border-radius 20px
+
+.social
+
+	.round-icon
+		height 50px
+		width 50px
+		border-radius 25px
+		margin 0 5px
+
+		&:hover
+			opacity 0.8
+
+		&.twitter
+			background-color #1da1f2
+
+			.logo
+				margin-left 2px
+
+		&.github
+			background-color #4078c0
+
+		&.instagram
+			background-color #405de6
+
+		.logo
+			height 30px
+			width 30px
+			fill white
+
+.footer
+	flex-direction column
+	padding-top 20px
+	padding-bottom 40px
+
+	.bar
+		width 90%
+		border-bottom 1px solid #919191
+
+	span
+		margin-top 10px
+		font-size 12px
+		color #919191
+
+	.license
+		margin-top 5px
+		.copy
+			text-align center
+			margin-top 2px
+			font-size 10px
+			height 10px
+			line-height 10px
+			color #aaaaaa
+
+			a:link, a:visited, a:hover, a:active {
+				font-weight 700
+				color #aaaaaa
+				text-decoration none
+			}
