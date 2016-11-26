@@ -67,7 +67,7 @@ gulp.task('sftp-dev', function () {
 		.pipe(sftp({
 			host: '153.126.128.58',
 			auth: 'pittankopta.net',
-			remotePath: '/home/pittan/web/dev.app.pittankopta.net/html/'
+			remotePath: '/home/pittan/web/dev.app.pittankopta.net/'
 	}));
 });
 
