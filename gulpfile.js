@@ -41,6 +41,11 @@ gulp.task('upload', function(callback) {
 	runSequence('clean', 'bundle', 'build', 'php', 'sftp', callback);
 });
 
+// Build & Upload files to specific server via SFTP (Dev)
+gulp.task('upload-dev', function(callback) {
+	runSequence('clean', 'bundle', 'build', 'php', 'sftp-dev', callback);
+});
+
 // Upload every single files on dist folder.
 // Authentication info has to be written in .ftppass file.
 // Be sure to add *.ftppass into .gitignore files.
@@ -49,7 +54,20 @@ gulp.task('sftp', function () {
 		.pipe(sftp({
 			host: '153.126.128.58',
 			auth: 'pittankopta.net',
-			remotePath: '/home/pittan/web/pittankopta.net/html/'
+			remotePath: '/home/pittan/web/app.pittankopta.net/html/'
+	}));
+});
+
+// Upload every single files on dist folder.
+// Authentication info has to be written in .ftppass file.
+// Be sure to add *.ftppass into .gitignore files.
+// This task will upload to dev.app.pittankopta.net
+gulp.task('sftp-dev', function () {
+	return gulp.src('dist/**/*')
+		.pipe(sftp({
+			host: '153.126.128.58',
+			auth: 'pittankopta.net',
+			remotePath: '/home/pittan/web/dev.app.pittankopta.net/html/'
 	}));
 });
 
