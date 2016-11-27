@@ -1,0 +1,17 @@
+mixin html-header(title)
+  head
+    title #{title}
+    meta(name='viewport', content='width=device-width, height=device-height, maximum-scale=1.0')
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='./styl/main.css')
+
+mixin content-header(title, date, author)
+  .icon-container.flex-center
+    .icon
+  .title.flex-center #{title}
+  .detail.flex-center #{date} #{author}
+  
+mixin content-footer
+  .footer.flex-center
+    .bar
+    span nogi2
