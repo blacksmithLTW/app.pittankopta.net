@@ -1,0 +1,123 @@
+flex-version ?= flex
+
+@import 'nib'
+
+body
+  -webkit-touch-callout none
+  -webkit-user-select none
+  margin 0
+  font-family 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro'
+  background-color #f5f5f5
+
+.flex-center
+  display flex
+  align-items center
+  justify-content center
+
+.bg-keyaki2
+  background-color #62B85A
+
+.bg-perfumehub
+  background-color #489BC6
+
+.summary-list-header
+  margin 20px 0 10px 0
+  padding 0 10px
+
+  .title
+    font-size 17px
+    line-height 18px
+    font-weight 700
+
+  .description
+    font-size 13px
+    line-height 15px
+
+.message-area
+  min-height 50px
+  margin 5px 10px
+  padding 10px
+  background-color rgba(255,255,255,0.8)
+  border-radius 10px
+  display flex
+  align-items center
+  justify-content center
+  border-bottom 1px solid #e6e6e6
+  color #666666
+  font-size 14px
+  line-height 16px
+  text-align center
+
+.no-summary
+  min-height 50px
+  margin 5px 10px
+  background-color rgba(255,255,255,0.8)
+  border-radius 10px
+  display flex
+  align-items center
+  justify-content center
+  border-bottom 1px solid #e6e6e6
+
+  .message
+    color #666666
+    font-size 14px
+    line-height 16px
+    text-align center
+
+.summary-list
+  width 100%
+  display flex
+  flex-direction column
+
+  .summary
+    min-height 50px
+    margin 5px 10px
+    background-color rgba(255,255,255,0.8)
+    border-radius 10px
+    display flex
+    align-items center
+    border-bottom 1px solid #e6e6e6
+
+    .icon
+      height 40px
+      width 40px
+      background-color #489BC6
+      border-radius 20px
+      flex none
+      margin 10px
+
+      .icon-text
+        font-size 6px
+        color white
+        font-weight 700
+
+    .summary-info
+      flex 1
+      margin 10px 10px 10px 0
+      
+      .info-header
+        font-weight 700
+        font-size 12px
+        line-height 14px
+
+      .info-body
+        font-size 13px
+        line-height 15px
+
+  .remark
+    margin 10px
+    font-size 10px
+    color #666666
+
+.footer
+  border-top 1px solid #e6e6e6
+  margin 10px 10px 20px
+  font-size 10px
+  color #666666
+  
+  .title
+    margin-top 10px
+    line-height 12px
+
+  .version-info
+    font-size 10px
